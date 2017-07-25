@@ -1,0 +1,4 @@
+package: github.com/sandromello/app-controller
+import:
+- package: k8s.io/client-go
+  version: v3.0.0

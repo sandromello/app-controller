@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: app-demo
+  annotations:
+    app.manager/registry-url: "quay.io"
+    app.manager/registry-org: "sandromello"
+    app.manager/build: "true"
+    app.manager/clone-url: "https://github.com/heroku/node-js-getting-started.git"
+spec:
+  replicas: 1
+  paused: true
+  template:
+    metadata:
+      labels:
+        app: app-demo
+    spec:
+      containers:
+      - name: app-demo
+        image: busybox
